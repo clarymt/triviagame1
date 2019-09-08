@@ -64,7 +64,7 @@
     ];
     console.log(questionSet)
     //variables we need to intitialize the trivia
-    let count = 2;
+    let count = 25;
     let currQuestion = 0;
     let score = 0;
     let lost = 0;
@@ -76,9 +76,11 @@
         const questionSetEnd = (questionSet.length - 1) === currQuestion;
         if (questionSetEnd) {
             console.log('The existentialism of this trivia game has become self aware to its own demise, game over.');
-        } else {
-        currQuestion++;
-        loadQuestion();
+        } 
+        
+        else {
+            currQuestion++;
+            loadQuestion();
         }
     }        
        
@@ -101,7 +103,7 @@
     //calling quesiton and options on html
     function loadQuestion() {
     
-        count = 2;
+        count = 25;
         timer = setInterval(countDown, 1000);
 
         const question = questionSet[currQuestion].triviaQuestion;
@@ -119,6 +121,22 @@
             result += `<p class="choice" data-answer="${choices[i]}">${choices[i]}</p>`;
         }
         return result;
+    }
+//Need onclick function to acknowledge correct answer and incorrect answer
+$(document).on('click', '.choice', function() {
+    const answerChoice = $(this).attr('data-answer');
+    const correctChoice = questionSet[currQuestion].answer;
 
-}
+    if (correctChoice === answerChoice) {
+        score++;
+        console.log("yes")
+    }
+
+    else{
+        lost ++;
+        console.log("no")
+    }
+    //console.log('clicky clicky picky clicky', answerChoice);
+});
+
 loadQuestion();
