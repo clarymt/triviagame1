@@ -112,8 +112,9 @@
         
         $('#timer').html('Time left: ' + count);
         $('#game').html(`<h4>${question}</h4> 
-            ${loadMultipleChoice(choices)}`);
-       
+            ${loadMultipleChoice(choices)}
+            ${remainingQuestions()}
+       `)
     }
 
     function loadMultipleChoice(choices) {
@@ -165,5 +166,11 @@ $(document).on('click','#reset',function() {
     loadQuestion();
 
 });
+
+function remainingQuestions() {
+    const remainQuestion = questionSet.length - (currQuestion);
+    const totalQuestions = questionSet.length;
+    return `Remaining Questions: ${remainQuestion}/${totalQuestions}`;
+}
 
 loadQuestion();
