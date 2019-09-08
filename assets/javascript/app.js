@@ -39,7 +39,7 @@
 
         {
             triviaQuestion: "What was the budget for the making of 'Nevermind'?",
-            multipleChoice: ["$25,000", "65,000", "$85,000", "$105,000"],
+            multipleChoice: ["$25,000", "$65,000", "$85,000", "$105,000"],
             answer: "$65,000"
         },
 
@@ -76,6 +76,7 @@
         const questionSetEnd = (questionSet.length - 1) === currQuestion;
         if (questionSetEnd) {
             console.log('The existentialism of this trivia game has become self aware to its own demise, game over.');
+            summary();
         } 
         
         else {
@@ -124,19 +125,45 @@
     }
 //Need onclick function to acknowledge correct answer and incorrect answer
 $(document).on('click', '.choice', function() {
+    clearInterval(timer); //set timer clear within the click function
     const answerChoice = $(this).attr('data-answer');
     const correctChoice = questionSet[currQuestion].answer;
 
     if (correctChoice === answerChoice) {
         score++;
-        console.log("yes")
+        questionNext ();
+        //console.log("yes")
     }
 
     else{
         lost ++;
-        console.log("no")
+        questionNext ();
+        //console.log("no")
     }
     //console.log('clicky clicky picky clicky', answerChoice);
+});
+
+//create game summary
+
+function summary() {
+    const result = `
+     <p>Questions Correct: ${score}</p>
+     <p>Questions Incorrect: ${lost}</p>
+     <p>Questions in Total: ${questionSet.length}</p>
+    <button  id="reset"> Play Again </button>
+    `;
+    $('#game').html(result);
+}
+
+$(document).on('click','#reset',function() {
+    count = 25;
+    currQuestion = 0;
+    score = 0;
+    lost = 0;
+    timer = null;
+
+    loadQuestion();
+
 });
 
 loadQuestion();
