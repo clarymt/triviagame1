@@ -1,4 +1,4 @@
-$(document).ready();
+$( document ).ready(function() {
 //generate quiz questions by creating array
 //the create array for each question
 const questionSet = [
@@ -63,7 +63,20 @@ const questionSet = [
         answer: "4"
     },
 ];
+console.log(questionSet)
+ //variables we need to intitialize the trivia
+ let count = 25;
+ let currQuestion = 0;
+ let score = 0;
+ let lost = 0;
+ let timer; 
+//calling quesiton and options on html
+function loadQuestion() {
+    const question = questionSet[currQuestion].question;
+    const choices = questionSet[currQuestion].choices;
 
-
-
+    $('#game').html('<th scope="col" >' + question + '</th>')
+}
+ loadQuestion();
+});
 
