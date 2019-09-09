@@ -62,6 +62,8 @@
             answer: "4"
         },
     ];
+
+
     console.log(questionSet)
     //variables we need to intitialize the trivia
     let count = 25;
@@ -75,7 +77,6 @@
       //need timer to recognize when questionset has ended
         const questionSetEnd = (questionSet.length - 1) === currQuestion;
         if (questionSetEnd) {
-            console.log('The existentialism of this trivia game has become self aware to its own demise, game over.');
             summary();
         } 
         
@@ -148,6 +149,7 @@ $(document).on('click', '.choice', function() {
 
 function summary() {
     const result = `
+    <p>The existentialism of this trivia game has become self aware to its own demise, game over.</p>
      <p>Questions Correct: ${score}</p>
      <p>Questions Incorrect: ${lost}</p>
      <p>Questions in Total: ${questionSet.length}</p>
