@@ -1,2 +1,50 @@
 body {
- 
+    background-position: 100%;
+}
+
+
+.choice {
+    margin: auto;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.527);
+    color: rgb(253, 255, 112);
+    border-radius: 14px;
+    cursor: pointer;
+    text-align: center;
+    width: 25%;
+}
+
+#timer {
+        text-align: center;
+        border: 1px solid rgb(255, 0, 242);
+        padding: 1px;
+        background: rgba(255, 153, 0, 0.897); 
+        color:rgb(0, 195, 255);
+        border-radius: 174px;
+        cursor: pointer;
+}
+
+h4 {
+    border: 1px solid rgb(68, 0, 255);
+        padding: 10px;
+        border-radius: 4px;
+        background: rgba(251, 255, 20, 0.733); 
+        color:rgb(0, 0, 0);
+        cursor: pointer;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;}
+
+.left {
+    border: 1px solid rgb(255, 0, 242);
+        padding: 1px;
+        background: rgba(255, 153, 0, 0.897); 
+        color:rgb(0, 153, 255);
+        border-radius: 1px;
+        cursor: pointer;
+        width: 15%;
+}
