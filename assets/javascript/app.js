@@ -198,4 +198,8 @@ function remainingQuestions() {
     return `<p class='left'>Remaining Questions: ${remainQuestion}/${totalQuestions}</p>`;
 }
 
-loadQuestion();
+$('#start').click(function(){
+    $('#start').remove();
+    $('#timer').html(count);
+    loadQuestion();
+});
