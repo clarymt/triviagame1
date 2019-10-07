@@ -1,4 +1,4 @@
-# triviagame1
+# nirvanaTrivia
 
- displaying gifs on click
+Trivia about the band Nirvana
  https://clarymt.github.io/triviagame1/
