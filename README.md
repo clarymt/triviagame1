@@ -2,6 +2,16 @@
 
 Test your knowledge of _Nirvana_ with this multiple choice trivia game.
 
+## Screenshots
+
+Start page:
+![](https://github.com/clarymt/triviagame1/blob/master/assets/images/startpage.png)
+
+In-game images:
+![](https://github.com/clarymt/triviagame1/blob/master/assets/images/ingame1.png)
+![](https://github.com/clarymt/triviagame1/blob/master/assets/images/ingame2.png)
+![](https://github.com/clarymt/triviagame1/blob/master/assets/images/ingame3.png)
+
 
 ## Game rules
 
